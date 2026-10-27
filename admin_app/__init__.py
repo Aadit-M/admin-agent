@@ -1,0 +1,1 @@
+"""Enterprise admin Streamlit application."""
