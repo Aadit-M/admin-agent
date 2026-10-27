@@ -58,29 +58,3 @@ python -m uvicorn app:app --reload
 Open `http://127.0.0.1:8000`.
 
 Each browser workspace has isolated in-memory state. Restarting the backend clears sessions. Use **Settings → Reset workspace** to restore the seeded demo directory, purchase orders, and policies.
-
-## Upload to a new GitHub repository
-
-1. Create a new, empty repository on GitHub. Do not initialize it with a README, license, or `.gitignore`.
-2. From the project root, initialize Git and stage the project:
-
-   ```powershell
-   git init -b main
-   git add .
-   git status
-   ```
-
-   Check that `.env` is **not** staged (`.gitignore` excludes it) and that `.env.example` is staged. Then commit:
-
-   ```powershell
-   git commit -m "Initial AdminHelp application"
-   ```
-
-3. Add the new repository as `origin` and push (replace the URL with your repository's URL):
-
-   ```powershell
-   git remote add origin https://github.com/YOUR-USERNAME/YOUR-REPOSITORY.git
-   git push -u origin main
-   ```
-
-4. On another machine or after cloning the repository, create `.env` from `.env.example` and add your own Groq API key. Never upload `.env` or share your API key; only `.env.example` belongs in GitHub.
